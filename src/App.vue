@@ -6,7 +6,7 @@ import CaVisualizer from './components/CaVisualizer.vue'
 // --- Reactive State for the CA ---
 const caWidth = ref(8) // Default 8 bits/cells
 const caRuleset = ref(30) // Default Rule 30
-const caInitialInteger = ref(1) // Default middle bit active
+const caInitialInteger = ref(Math.pow(2, caWidth.value - 1)) // Default middle bit active
 const caSequenceLength = ref(50) // Default sequence length
 
 const currentCaCells = ref<number[]>([]) // Current binary state of the automaton (as plain array for Vue reactivity)
