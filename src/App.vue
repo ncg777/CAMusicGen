@@ -195,10 +195,6 @@ watch([caWidth, caRuleset, caInitialInteger], () => {
         :width="caWidth"
       />
     </main>
-
-    <footer>
-      <p>&copy; 2025 Cellular Automata Music Generator. All rights reserved.</p>
-    </footer>
   </div>
 </template>
 
@@ -216,7 +212,7 @@ body {
 #app {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -224,13 +220,15 @@ body {
 
 header {
   text-align: center;
-  padding: 2rem 0;
+  padding: 0;
   border-bottom: 1px solid #333;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 header h1 {
   color: #4caf50;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 2.5rem;
 }

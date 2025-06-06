@@ -118,7 +118,7 @@ const updateSequenceLength = () => emit('update:sequenceLength', internalSequenc
       />
       <div class="rule-hint">
         (e.g., 30, 90, 110. See
-        <a href="https://en.wikipedia.org/wiki/Wolfram%27s_256_cellular_automata" target="_blank"
+        <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton" target="_blank"
           >Wikipedia</a
         >
         for details.)
