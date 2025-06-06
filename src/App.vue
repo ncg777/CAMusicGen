@@ -7,7 +7,7 @@ import CaVisualizer from './components/CaVisualizer.vue'
 const caWidth = ref(8) // Default 8 bits/cells
 const caRuleset = ref(30) // Default Rule 30
 const caInitialInteger = ref(1) // Default middle bit active
-const caSequenceLength = ref(50) // Default sequence length
+const caSequenceLength = ref(32) // Default sequence length
 
 const currentCaCells = ref<number[]>([]) // Current binary state of the automaton (as plain array for Vue reactivity)
 const currentCaInteger = ref(0) // Current integer value of the automaton
@@ -32,11 +32,9 @@ function convertIntegerToBinaryArray(integer: number, width: number): number[] {
 }
 
 onMounted(() => {
-  const workerPath = import.meta.env.PROD
-    ? '/ca.worker.js'
-    : new URL('./worker/ca.worker.ts', import.meta.url).href
-
-  caWorker = new Worker(workerPath, { type: 'module' })
+  caWorker = new Worker(new URL('./worker/ca.worker.ts', import.meta.url), {
+    type: 'module', // Important for TypeScript workers
+  })
 
   caWorker.onmessage = (event) => {
     switch (event.data.type) {
