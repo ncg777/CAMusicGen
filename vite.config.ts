@@ -18,6 +18,9 @@ export default defineConfig({
       manifest: {
         name: 'Cellular Automata Music Generator',
         short_name: 'CAMusicGen',
+        description:
+          "Generate integer sequences for musical interpretation using Wolfram's 1D Cellular Automata.",
+        start_url: '/CAMusicGen/',
         icons: [
           {
             src: '/web-app-manifest-192x192.png',
